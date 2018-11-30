@@ -10,6 +10,10 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="izCompileConfig.h" />
+    <ClInclude Include="izTypes.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{47540839-923F-42D1-AD96-80E737D9E86B}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
@@ -41,8 +45,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>F:\OneDrive - AD\台式机-study\Github\IrrlichtZero\irrlicht-1.8.4\include;$(IncludePath)</IncludePath>
-    <LibraryPath>F:\OneDrive - AD\台式机-study\Github\IrrlichtZero\irrlicht-1.8.4\lib\Win32-visualstudio;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
     <ReferencePath>$(ReferencePath)</ReferencePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
