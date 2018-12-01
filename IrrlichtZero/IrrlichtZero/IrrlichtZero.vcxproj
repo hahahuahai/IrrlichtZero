@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="izCompileConfig.h" />
+    <ClInclude Include="izMath.h" />
     <ClInclude Include="izTypes.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
