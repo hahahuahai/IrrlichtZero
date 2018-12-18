@@ -241,7 +241,7 @@ bool CSoftwareDriver::endScene()
 {
 	CNullDriver::endScene();
 
-	return Presenter->present(BackBuffer, WindowId, SceneSourceRect);
+	return Presenter->present(BackBuffer, WindowId, SceneSourceRect);//Ç°ºó»º´æÌæ»»
 }
 
 

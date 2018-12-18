@@ -32,7 +32,7 @@ public:
 	//! destructor
 	virtual ~CImage();
 
-	//! Lock function.
+	//! Lock function.	得到图片数据
 	virtual void* lock()
 	{
 		return Data;

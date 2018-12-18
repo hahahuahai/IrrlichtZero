@@ -2379,7 +2379,7 @@ void COpenGLDriver::draw2DRectangle(const core::rect<s32>& position,
 }
 
 
-//! Draws a 2d line.
+//! Draws a 2d line.	利用的是opengl里面的固定管线，没有使用可编程管线
 void COpenGLDriver::draw2DLine(const core::position2d<s32>& start,
 				const core::position2d<s32>& end, SColor color)
 {

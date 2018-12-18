@@ -57,7 +57,7 @@ inline u32 GetClipCode( const AbsRectangle &r, const core::position2d<s32> &p )
 		code = CLIPCODE_RIGHT;
 
 	if ( p.Y < r.y0 )
-		code |= CLIPCODE_TOP;
+		code |= CLIPCODE_TOP;	//按位或 提高运算效率  这里相当于加号。
 	else
 	if ( p.Y > r.y1 )
 		code |= CLIPCODE_BOTTOM;
@@ -66,8 +66,8 @@ inline u32 GetClipCode( const AbsRectangle &r, const core::position2d<s32> &p )
 }
 
 
-/*!
-	Cohen Sutherland clipping
+/*! 线裁剪
+	Cohen Sutherland clipping    算法解释： https://en.wikipedia.org/wiki/Cohen%E2%80%93Sutherland_algorithm
 	@return: 1 if valid
 */
 
@@ -108,7 +108,7 @@ static int ClipLine(const AbsRectangle &clipping,
 			code = code1;
 		}
 
-		if ( (code & CLIPCODE_BOTTOM) == CLIPCODE_BOTTOM )
+		if ( (code & CLIPCODE_BOTTOM) == CLIPCODE_BOTTOM )	//写法技巧
 		{
 			// clip bottom viewport
 			y = clipping.y1;
@@ -338,7 +338,7 @@ static void RenderLine32_Blend(video::IImage *t,
 	t->unlock();
 }
 
-/*
+/* DDA画线算法？
 */
 static void RenderLine16_Decal(video::IImage *t,
 				const core::position2d<s32> &p0,
@@ -369,7 +369,7 @@ static void RenderLine16_Decal(video::IImage *t,
 	}
 
 	u16 *dst;
-	dst = (u16*) ( (u8*) t->lock() + ( p0.Y * t->getPitch() ) + ( p0.X << 1 ) );
+	dst = (u16*) ( (u8*) t->lock() + ( p0.Y * t->getPitch() ) + ( p0.X << 1 ) );//得到在t的Data数据中的画线起点
 
 	if ( dy > dx )
 	{
@@ -387,7 +387,7 @@ static void RenderLine16_Decal(video::IImage *t,
 
 	run = dx;
 	do
-	{
+	{	//画线算法:DDA算法
 		*dst = (u16)argb;
 
 		dst = (u16*) ( (u8*) dst + xInc );	// x += xInc
@@ -1231,19 +1231,19 @@ static void drawLine(video::IImage* img, const core::position2d<s32>& from,
 					 const core::position2d<s32>& to, const video::SColor &color)
 {
 	AbsRectangle clip;
-	GetClip(clip, img);
+	GetClip(clip, img);//得到img的范围
 
 	core::position2d<s32> p[2];
 	if (ClipLine( clip, p[0], p[1], from, to))
 	{
-		u32 alpha = extractAlpha(color.color);
+		u32 alpha = extractAlpha(color.color);//得到alpha的值
 
 		switch(img->getColorFormat())
 		{
 		case video::ECF_A1R5G5B5:
 				if (alpha == 256)
 				{
-					RenderLine16_Decal(img, p[0], p[1], video::A8R8G8B8toA1R5G5B5(color.color));
+					RenderLine16_Decal(img, p[0], p[1], video::A8R8G8B8toA1R5G5B5(color.color));//画线
 				}
 				else
 				{

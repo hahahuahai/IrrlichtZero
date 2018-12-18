@@ -1,7 +1,11 @@
-﻿生成启动时间为 2018/12/1 11:07:38。
+﻿生成启动时间为 2018/12/18 18:53:24。
      1>项目“F:\OneDrive - AD\台式机-study\Github\IrrlichtZero\irrlicht-1.8.4\source\Irrlicht\Irrlicht12.0.vcxproj”在节点 2 上(Build 个目标)。
-     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(357,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
-     1>Link:
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(364,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\include /Izlib /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D IRRLICHT_EXPORTS /D _CRT_SECURE_NO_DEPRECATE /D _VC80_UPGRADE=0x0710 /D _WINDLL /D _ITERATOR_DEBUG_LEVEL=0 /Gm- /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR- /Fo"obj\Debug\\" /Fd"obj\Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt COpenGLDriver.cpp
+         COpenGLDriver.cpp
+     1>f:\onedrive - ad\台式机-study\github\irrlichtzero\irrlicht-1.8.4\include\Keycodes.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+       Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\..\IrrlichtZero\Debug\Irrlicht.dll" /VERSION:"1.8" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib opengl32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:libci.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"..\..\..\IrrlichtZero\Debug\Irrlicht.pdb" /TLBID:1 /DYNAMICBASE /IMPLIB:"..\..\..\IrrlichtZero\Debug\Irrlicht.lib" /MACHINE:X86 /SAFESEH /MACHINE:I386 /DLL obj\Debug\Irrlicht.res
          obj\Debug\CCgMaterialRenderer.obj
          obj\Debug\CD3D9CgMaterialRenderer.obj
@@ -311,10 +315,9 @@
          obj\Debug\CGUIToolBar.obj
          obj\Debug\CGUITreeView.obj
          obj\Debug\CGUIWindow.obj
-            正在创建库 ..\..\..\IrrlichtZero\Debug\Irrlicht.lib 和对象 ..\..\..\IrrlichtZero\Debug\Irrlicht.exp
          Irrlicht12.0.vcxproj -> F:\OneDrive - AD\台式机-study\Github\IrrlichtZero\irrlicht-1.8.4\source\Irrlicht\..\..\..\IrrlichtZero\Debug\Irrlicht.dll
      1>已完成生成项目“F:\OneDrive - AD\台式机-study\Github\IrrlichtZero\irrlicht-1.8.4\source\Irrlicht\Irrlicht12.0.vcxproj”(Build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:01.70
+已用时间 00:00:01.49
