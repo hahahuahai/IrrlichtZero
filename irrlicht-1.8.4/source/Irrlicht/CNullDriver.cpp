@@ -826,7 +826,7 @@ void CNullDriver::drawPixel(u32 x, u32 y, const SColor & color)
 }
 
 
-//! Draws a non filled concyclic regular 2d polygon.
+//! Draws a non filled concyclic regular 2d polygon.      绘制未填充的多边形，即四条边。
 void CNullDriver::draw2DPolygon(core::position2d<s32> center,
 	f32 radius, video::SColor color, s32 count)
 {
@@ -846,7 +846,7 @@ void CNullDriver::draw2DPolygon(core::position2d<s32> center,
 		if (j==0)
 			first = a;
 		else
-			draw2DLine(a, b, color);
+			draw2DLine(a, b, color);//调用了画线函数
 	}
 
 	draw2DLine(a, first, color);
