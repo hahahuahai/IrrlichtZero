@@ -73,7 +73,7 @@ namespace scene
 				TriangleSelector->drop();
 		}
 
-
+		//在渲染整个场景之前调用该方法注册结点
 		//! This method is called just before the rendering process of the whole scene.
 		/** Nodes may register themselves in the render pipeline during this call,
 		precalculate the geometry which should be renderered, and prevent their

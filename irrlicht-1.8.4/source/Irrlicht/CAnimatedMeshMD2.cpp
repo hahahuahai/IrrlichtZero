@@ -244,7 +244,7 @@ u32 CAnimatedMeshMD2::getFrameCount() const
 	return FrameCount<<MD2_FRAME_SHIFT;
 }
 
-
+//看懂需要了解MD2格式
 //! returns the animated mesh based on a detail level. 0 is the lowest, 255 the highest detail. Note, that some Meshes will ignore the detail level.
 IMesh* CAnimatedMeshMD2::getMesh(s32 frame, s32 detailLevel, s32 startFrameLoop, s32 endFrameLoop)
 {
@@ -310,7 +310,7 @@ void CAnimatedMeshMD2::updateInterpolationBuffer(s32 frame, s32 startFrameLoop, 
 		u32 e = endFrameLoop >> MD2_FRAME_SHIFT;
 
 		firstFrame = frame >> MD2_FRAME_SHIFT;
-		secondFrame = core::if_c_a_else_b(firstFrame + 1 > e, s, firstFrame + 1);
+		secondFrame = core::if_c_a_else_b(firstFrame + 1 > e, s, firstFrame + 1);//如果这一帧是最后一帧，则返回第一帧，否则返回下一帧。
 
 		firstFrame = core::s32_min(FrameCount - 1, firstFrame);
 		secondFrame = core::s32_min(FrameCount - 1, secondFrame);
@@ -326,7 +326,7 @@ void CAnimatedMeshMD2::updateInterpolationBuffer(s32 frame, s32 startFrameLoop, 
 
 	// interpolate both frames
 	const u32 count = FrameList[firstFrame].size();
-	for (u32 i=0; i<count; ++i)
+	for (u32 i=0; i<count; ++i)//计算目标点的位置和法线
 	{
 		const core::vector3df one = core::vector3df(f32(first->Pos.X) * FrameTransforms[firstFrame].scale.X + FrameTransforms[firstFrame].translate.X,
 				f32(first->Pos.Y) * FrameTransforms[firstFrame].scale.Y + FrameTransforms[firstFrame].translate.Y,
@@ -377,7 +377,7 @@ void CAnimatedMeshMD2::setDirty(E_BUFFER_TYPE buffer)
 }
 
 
-//! returns an axis aligned bounding box
+//! returns an axis aligned bounding box	返回一个轴对称包围盒（在之前的getmesh函数中轴对称包围盒已经计算好了，这里直接返回结果。）
 const core::aabbox3d<f32>& CAnimatedMeshMD2::getBoundingBox() const
 {
 	return InterpolationBuffer->BoundingBox;

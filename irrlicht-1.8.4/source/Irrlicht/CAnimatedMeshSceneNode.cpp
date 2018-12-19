@@ -820,7 +820,7 @@ void CAnimatedMeshSceneNode::deserializeAttributes(io::IAttributes* in, io::SAtt
 }
 
 
-//! Sets a new mesh
+//! Sets a new mesh	
 void CAnimatedMeshSceneNode::setMesh(IAnimatedMesh* mesh)
 {
 	if (!mesh)
@@ -837,7 +837,7 @@ void CAnimatedMeshSceneNode::setMesh(IAnimatedMesh* mesh)
 		Mesh->grab();
 	}
 
-	// get materials and bounding box
+	// get materials and bounding box	
 	Box = Mesh->getBoundingBox();
 
 	IMesh* m = Mesh->getMesh(0,0);

@@ -239,7 +239,7 @@ namespace core
 			Y += center.Y;
 		}
 
-		//! Creates an interpolated vector between this vector and another vector.
+		//! Creates an interpolated vector between this vector and another vector.	对两个vector按照系数进行插值，并返回插值结果
 		/** \param other The other vector to interpolate with.
 		\param d Interpolation value between 0.0f (all the other vector) and 1.0f (all this vector).
 		Note that this is the opposite direction of interpolation to getInterpolated_quadratic()

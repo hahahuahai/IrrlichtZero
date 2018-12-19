@@ -636,7 +636,7 @@ IAnimatedMeshSceneNode* CSceneManager::addAnimatedMeshSceneNode(IAnimatedMesh* m
 		return 0;
 
 	if (!parent)
-		parent = this;
+		parent = this;//默认父节点是根节点
 
 	IAnimatedMeshSceneNode* node =
 		new CAnimatedMeshSceneNode(mesh, parent, this, id, position, rotation, scale);
